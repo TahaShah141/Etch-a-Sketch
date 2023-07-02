@@ -10,11 +10,21 @@ function drawGrid(n) {
         {
             const cell = document.createElement("div");
             cell.classList.add("cell");
+            cell.addEventListener("mouseenter", changeColor);
             row.appendChild(cell);
         }
 
         grid.appendChild(row);
     }
+}
+
+function changeColor() {
+    let color = getColor();
+    this.style['background-color'] = color;
+}
+
+function getColor() {
+    return "#000000";
 }
 
 drawGrid(16);
